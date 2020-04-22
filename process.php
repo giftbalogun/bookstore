@@ -71,7 +71,7 @@ unset($_SESSION['total_items']);
 			<p class="lead text-success" id="p">Your order has been processed sucessfully..</p>
 			<script>
 				window.setTimeout(function() {
-					window.location.href = "http://localhost/shop/index.php";
+					window.location.href = "./index.php";
 				}, 3000);
 			</script>
 		</div>
