@@ -21,7 +21,6 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Customer </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="add-user.php">Add Customer</a></li>
                                     <li><a href="manage-user.php">Manage Customer</a></li>
                                 </ul>
                             </li>
@@ -36,16 +35,16 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span>Publisher </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="add-subcategory.php">Add Publisher</a></li>
-                                    <li><a href="manage-subcategories.php">Manage Publisher</a></li>
+                                    <li><a href="add-publisher.php">Add Publisher</a></li>
+                                    <li><a href="manage-publisher.php">Manage Publisher</a></li>
                                 </ul>
                             </li>
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Books </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="add-post.php">Add Books</a></li>
-                                    <li><a href="manage-posts.php">Manage Books</a></li>
-                                    <li><a href="trash-posts.php">Trash Books</a></li>
+                                    <li><a href="add-book.php">Add Books</a></li>
+                                    <li><a href="manage-book.php">Manage Books</a></li>
+                                    <li><a href="trash-book.php">Trash Books</a></li>
                                 </ul>
                             </li>
                         </ul>

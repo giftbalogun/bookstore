@@ -13,8 +13,8 @@ if (strlen($_SESSION['manager']) == 0) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A CMS Blog">
-    <meta name="author" content="Brute_Code">
+    <meta name="description" content="Online Book Store">
+    <meta name="author" content="J's Books">
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -67,16 +67,16 @@ if (strlen($_SESSION['manager']) == 0) {
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="page-title-box">
-                                <h4 class="page-title">Manage Posts </h4>
+                                <h4 class="page-title">Manage Book </h4>
                                 <ol class="breadcrumb p-0 m-0">
                                     <li>
                                         <a href="#">Admin</a>
                                     </li>
                                     <li>
-                                        <a href="#">Posts</a>
+                                        <a href="#">Book</a>
                                     </li>
                                     <li class="active">
-                                        Manage Post
+                                        Manage Book
                                     </li>
                                 </ol>
                                 <div class="clearfix"></div>
@@ -88,38 +88,60 @@ if (strlen($_SESSION['manager']) == 0) {
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="card-box">
+                                <?php
+                                $query = "SELECT * FROM cart join cartitems join books join customers
+				                on cart.customerid=customers.id and cart.id=cartitems.cartid and cartitems.productid=books.id";
+                                $result = mysqli_query($conn, $query);
+                                if (mysqli_num_rows($result) != 0) { ?>
+                                    <div class="table-responsive">
+                                        <table class="table table-colored table-centered table-inverse m-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Firstname</th>
+                                                    <th>Lastname</th>
+                                                    <th>Customer Email</th>
+                                                    <th>Book Titke</th>
+                                                    <th>Quantity</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                for ($i = 0; $i < mysqli_num_rows($result); $i++) {
+                                                    while ($query_row = mysqli_fetch_assoc($result)) {
+                                                ?>
+                                                        <tr>
+                                                            <td><b><?php echo htmlentities($query_row['firstname']); ?></b></td>
+                                                            <td><b><?php echo htmlentities($query_row['lastname']); ?></b></td>
+                                                            <td><b><?php echo htmlentities($query_row['email']); ?></b></td>
+                                                            <td><b><?php echo htmlentities($query_row['book_title']); ?></b></td>
+                                                            <td><b><?php echo htmlentities($query_row['quantity']); ?></b></td>
+                                                            <td><b><?php echo htmlentities($query_row['date']); ?></b></td>
+                                                        </tr>
+                                                <?php }
+                                                } ?>
 
-                                <div class="table-responsive">
-                                    <table class="table table-colored table-centered table-inverse m-0">
-                                        <thead>
-                                            <tr>
-                                                <th>Book Titke</th>
-                                                <th>Quantity</th>
-                                                <th>Bate</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            <?php
-                                            $customer = getCustomerIdbyEmail($_SESSION['email']);
-                                            $customerid = $customer['id'];
-                                            $history = "SELECT * FROM cart join cartitems join books join customers on customers.id='$customerid' and cart.customerid='$customerid' and cart.id=cartitems.cartid and  cartitems.productid=books.book_isbn";
-                                            $query = mysqli_query($conn, $history);
-                                            $rowcount = mysqli_num_rows($query);
-                                            if ($rowcount == 0) { ?>
-                                                <?php } else {
-                                                while ($row = mysqli_fetch_array($query)) { ?>
-                                                    <tr>
-                                                        <td><b><?php echo htmlentities($row['book_title']); ?></b></td>
-                                                        <td><b><?php echo htmlentities($row['quantity']); ?></b></td>
-                                                        <td><b><?php echo htmlentities($row['date']); ?></b></td>
-                                                    </tr>
-                                            <?php }
-                                            } ?>
-
-                                        </tbody>
-                                    </table>
-                                </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <?php } else {
+                                    echo '
+                                        <div class="section">
+                                            <!-- container -->
+                                            <div class="container">
+                                                <!-- row -->
+                                                <div class="row">
+                                                    <div class="alert alert-info" role="alert">
+                                                    <p class="text-center" >No Order Has Benn Placed</p>
+                                                    </div>
+                                                </div>
+                                                <!-- /row -->
+                                            </div>
+                                            <!-- /container -->
+                                        </div>
+                                        ';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

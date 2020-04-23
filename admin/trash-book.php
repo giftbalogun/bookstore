@@ -32,8 +32,8 @@ if (strlen($_SESSION['manager']) == 0) {
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A CMS Blog">
-        <meta name="author" content="Brute_Code">
+        <meta name="description" content="Online Book Store">
+        <meta name="author" content="J's Books">
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">

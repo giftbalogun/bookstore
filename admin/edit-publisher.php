@@ -7,18 +7,16 @@ if (strlen($_SESSION['manager']) == 0) {
     header('location:index.php');
 } else {
     if (isset($_POST['submit'])) {
-        $catid = intval($_GET['cid']);
-        $category = $_POST['category'];
-        $description = $_POST['description'];
-        $query = mysqli_query($con, "Update  category set category_name='$category' where catgoryid='$catid'");
+        $pubid = $_GET['cid'];
+        $publisher = $_POST['publisher'];
+        $query = mysqli_query($conn, "Update  publisher set publisher_name='$publisher' where publisherid='$pubid'");
         if ($query) {
-            $msg = "Category Updated successfully ";
+            $msg = "publisher Updated successfully ";
         } else {
             $error = "Something went wrong . Please try again.";
         }
     }
 ?>
-
     <!DOCTYPE html>
     <html lang="en">
 
@@ -37,7 +35,6 @@ if (strlen($_SESSION['manager']) == 0) {
 
     </head>
 
-
     <body class="fixed-left">
 
         <!-- Begin page -->
@@ -47,7 +44,6 @@ if (strlen($_SESSION['manager']) == 0) {
             <?php include('includes/topheader.php'); ?>
             <!-- Top Bar End -->
 
-
             <!-- ========== Left Sidebar Start ========== -->
             <?php include('includes/leftsidebar.php'); ?>
             <!-- Left Sidebar End -->
@@ -56,21 +52,19 @@ if (strlen($_SESSION['manager']) == 0) {
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
-
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Edit Category</h4>
+                                    <h4 class="page-title">Edit publisher</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Admin</a>
                                         </li>
                                         <li>
-                                            <a href="#">Category </a>
+                                            <a href="#">publisher </a>
                                         </li>
                                         <li class="active">
-                                            Edit Category
+                                            Edit publisher
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -78,16 +72,11 @@ if (strlen($_SESSION['manager']) == 0) {
                             </div>
                         </div>
                         <!-- end row -->
-
-
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box">
-                                    <h4 class="m-t-0 header-title"><b>Edit Category </b></h4>
+                                    <h4 class="m-t-0 header-title"><b>Edit publisher </b></h4>
                                     <hr />
-
-
-
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <!---Success Message--->
@@ -102,30 +91,29 @@ if (strlen($_SESSION['manager']) == 0) {
                                                 <div class="alert alert-danger" role="alert">
                                                     <strong>Oh snap!</strong> <?php echo htmlentities($error); ?></div>
                                             <?php } ?>
-
-
                                         </div>
                                     </div>
 
                                     <?php
-                                    $catid = intval($_GET['cid']);
-                                    $query = mysqli_query($conn, "Select category_name from  category where Is_Active=1 and categoryid='$catid'");
+                                    $pubid = $_GET['cid'];
+                                    $query = mysqli_query($conn, "Select publisher_name publisher where Is_Active=1 and publisherid='$pubid'");
                                     $cnt = 1;
                                     while ($row = mysqli_fetch_array($query)) {
                                     ?>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <form class="form-horizontal" name="category" method="post">
+                                                <form class="form-horizontal" name="publisher" method="post">
                                                     <div class="form-group">
-                                                        <label class="col-md-2 control-label">Category</label>
+                                                        <label class="col-md-2 control-label">publisher</label>
                                                         <div class="col-md-10">
-                                                            <input type="text" class="form-control" value="<?php echo htmlentities($row['category_name']); ?>" name="category" required>
+                                                            <input type="text" class="form-control" value="<?php echo htmlentities($row['publisher_name']); ?>" name="publisher" required>
                                                         </div>
                                                     </div>
                                                 <?php } ?>
                                                 <div class="form-group">
                                                     <label class="col-md-2 control-label">&nbsp;</label>
                                                     <div class="col-md-10">
+
                                                         <button type="submit" class="btn btn-custom waves-effect waves-light btn-md" name="submit">
                                                             Update
                                                         </button>
@@ -139,6 +127,7 @@ if (strlen($_SESSION['manager']) == 0) {
                             </div>
                         </div>
                         <!-- end row -->
+
                     </div> <!-- container -->
 
                 </div> <!-- content -->

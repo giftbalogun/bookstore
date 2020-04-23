@@ -1,27 +1,21 @@
 <?php
 session_start();
-//Database Configuration File
 include('includes/config.php');
-include('includes/header.php');
-//error_reporting(0);
-if (isset($_POST['login'])) {
-
+$conn = db_connect();
+error_reporting(0);
+if (strlen($_SESSION['manager']) == 0) {
+    $name = trim($_POST['username']);
+    $pass = trim($_POST['password']);
     // Getting username/ email and password
-    $uname = $_POST['username'];
-    $password = $_POST['password'];
-    // Fetch data from database on the basis of username/email and password
-    $sql = mysqli_query($con, "SELECT AdminUserName,AdminEmailId,AdminPassword FROM tbladmin WHERE (AdminUserName='$uname' || AdminEmailId='$uname')");
-    $num = mysqli_fetch_array($sql);
-    if ($num > 0) {
-        $hashpassword = $num['AdminPassword']; // Hashed password fething from database
-        //verifying Password
-        if (password_verify($password, $hashpassword)) {
-            $_SESSION['login'] = $_POST['username'];
-            echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-        } else {
-            echo "<script>alert('Wrong Password');</script>";
-        }
+    $query = "SELECT name, pass from manager";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    if ($name == $row['name'] && $pass == $row['pass']) {
+        $_SESSION['manager'] = true;
+        unset($_SESSION['user']);
+        echo "<script type='text/javascript'> document.location = '../admin/dashboard.php'; </script>";
     }
+
     //if username or email not found in database
     else {
         echo "<script>alert('User not registered with us');</script>";
@@ -76,15 +70,13 @@ if (isset($_POST['login'])) {
 
                                     <div class="form-group ">
                                         <div class="col-xs-12">
-                                            <input class="form-control" type="text" required="" name="username"
-                                                placeholder="Username or email" autocomplete="off">
+                                            <input class="form-control" type="text" required="" name="username" placeholder="Username or email" autocomplete="off">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="col-xs-12">
-                                            <input class="form-control" type="password" name="password" required=""
-                                                placeholder="Password" autocomplete="off">
+                                            <input class="form-control" type="password" name="password" required="" placeholder="Password" autocomplete="off">
                                         </div>
                                     </div>
 
@@ -92,8 +84,7 @@ if (isset($_POST['login'])) {
 
                                     <div class="form-group account-btn text-center m-t-10">
                                         <div class="col-xs-12">
-                                            <button class="btn w-md btn-bordered btn-danger waves-effect waves-light"
-                                                type="submit" name="login">Log In</button>
+                                            <button class="btn w-md btn-bordered btn-danger waves-effect waves-light" type="submit" name="login">Log In</button>
                                         </div>
                                     </div>
 
@@ -118,7 +109,7 @@ if (isset($_POST['login'])) {
     <!-- END HOME -->
 
     <script>
-    var resizefunc = [];
+        var resizefunc = [];
     </script>
 
     <!-- jQuery  -->
