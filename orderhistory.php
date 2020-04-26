@@ -51,7 +51,7 @@ $conn = db_connect();
 											while ($query_row = mysqli_fetch_assoc($result)) {
 										?>
 												<tr>
-													<td class="thumb"><img src="./img/thumb-product01.jpg" alt=""></td>
+													<td class="thumb"><img src="admin/uploads/<?php echo $query_row['book_image']; ?>" alt=""></td>
 													<td class="details">
 														<a href="#"><?php echo  $query_row['book_title']; ?></a>
 														<ul>

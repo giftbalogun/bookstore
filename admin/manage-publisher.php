@@ -124,7 +124,7 @@ if (strlen($_SESSION['manager']) == 0) {
                                                         <tr>
                                                             <th scope="row"><?php echo htmlentities($cnt); ?></th>
                                                             <td><?php echo htmlentities($row['publisher_name']); ?></td>
-                                                            <td><a href="edit-publisher.php?cid=<?php echo htmlentities($row['publisherid']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
+                                                            <td><a href="edit-publisher.php?pid=<?php echo htmlentities($row['publisherid']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
                                                                 &nbsp;<a href="manage-publisher.php?rid=<?php echo htmlentities($row['publisherid']); ?>&&action=del">
                                                                     <i class="fa fa-trash-o" style="color: #f05050"></i></a>
                                                             </td>

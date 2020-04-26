@@ -7,10 +7,9 @@ if (strlen($_SESSION['manager']) == 0) {
     header('location:index.php');
 } else {
     if (isset($_POST['submit'])) {
-        $catid = intval($_GET['cid']);
+        $catid = $_GET['cid'];
         $category = $_POST['category'];
-        $description = $_POST['description'];
-        $query = mysqli_query($con, "Update  category set category_name='$category' where catgoryid='$catid'");
+        $query = mysqli_query($conn, "UPDATE category SET category_name='$category' WHERE categoryid='$catid'");
         if ($query) {
             $msg = "Category Updated successfully ";
         } else {
@@ -18,12 +17,10 @@ if (strlen($_SESSION['manager']) == 0) {
         }
     }
 ?>
-
     <!DOCTYPE html>
     <html lang="en">
 
     <head>
-
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
@@ -34,9 +31,7 @@ if (strlen($_SESSION['manager']) == 0) {
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
         <script src="assets/js/modernizr.min.js"></script>
-
     </head>
-
 
     <body class="fixed-left">
 
@@ -47,7 +42,6 @@ if (strlen($_SESSION['manager']) == 0) {
             <?php include('includes/topheader.php'); ?>
             <!-- Top Bar End -->
 
-
             <!-- ========== Left Sidebar Start ========== -->
             <?php include('includes/leftsidebar.php'); ?>
             <!-- Left Sidebar End -->
@@ -56,8 +50,6 @@ if (strlen($_SESSION['manager']) == 0) {
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
-
-
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
@@ -79,15 +71,11 @@ if (strlen($_SESSION['manager']) == 0) {
                         </div>
                         <!-- end row -->
 
-
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box">
                                     <h4 class="m-t-0 header-title"><b>Edit Category </b></h4>
                                     <hr />
-
-
-
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <!---Success Message--->
@@ -102,14 +90,11 @@ if (strlen($_SESSION['manager']) == 0) {
                                                 <div class="alert alert-danger" role="alert">
                                                     <strong>Oh snap!</strong> <?php echo htmlentities($error); ?></div>
                                             <?php } ?>
-
-
                                         </div>
                                     </div>
-
                                     <?php
-                                    $catid = intval($_GET['cid']);
-                                    $query = mysqli_query($conn, "Select category_name from  category where Is_Active=1 and categoryid='$catid'");
+                                    $catid = $_GET['cid'];
+                                    $query = mysqli_query($conn, "Select * from  category where Is_Active=1 and categoryid='$catid'");
                                     $cnt = 1;
                                     while ($row = mysqli_fetch_array($query)) {
                                     ?>

@@ -7,9 +7,9 @@ if (strlen($_SESSION['manager']) == 0) {
     header('location:index.php');
 } else {
     if (isset($_POST['submit'])) {
-        $pubid = $_GET['cid'];
+        $pubid = $_GET['pid'];
         $publisher = $_POST['publisher'];
-        $query = mysqli_query($conn, "Update  publisher set publisher_name='$publisher' where publisherid='$pubid'");
+        $query = mysqli_query($conn, "UPDATE publisher SET publisher_name='$publisher' WHERE publisherid='$pubid'");
         if ($query) {
             $msg = "publisher Updated successfully ";
         } else {
@@ -21,7 +21,6 @@ if (strlen($_SESSION['manager']) == 0) {
     <html lang="en">
 
     <head>
-
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
@@ -32,7 +31,6 @@ if (strlen($_SESSION['manager']) == 0) {
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
         <script src="assets/js/modernizr.min.js"></script>
-
     </head>
 
     <body class="fixed-left">
@@ -72,6 +70,7 @@ if (strlen($_SESSION['manager']) == 0) {
                             </div>
                         </div>
                         <!-- end row -->
+
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box">
@@ -93,10 +92,9 @@ if (strlen($_SESSION['manager']) == 0) {
                                             <?php } ?>
                                         </div>
                                     </div>
-
                                     <?php
-                                    $pubid = $_GET['cid'];
-                                    $query = mysqli_query($conn, "Select publisher_name publisher where Is_Active=1 and publisherid='$pubid'");
+                                    $pubid = $_GET['pid'];
+                                    $query = mysqli_query($conn, "Select * from publisher where Is_Active=1 and publisherid='$pubid'");
                                     $cnt = 1;
                                     while ($row = mysqli_fetch_array($query)) {
                                     ?>
@@ -113,7 +111,6 @@ if (strlen($_SESSION['manager']) == 0) {
                                                 <div class="form-group">
                                                     <label class="col-md-2 control-label">&nbsp;</label>
                                                     <div class="col-md-10">
-
                                                         <button type="submit" class="btn btn-custom waves-effect waves-light btn-md" name="submit">
                                                             Update
                                                         </button>
@@ -127,7 +124,6 @@ if (strlen($_SESSION['manager']) == 0) {
                             </div>
                         </div>
                         <!-- end row -->
-
                     </div> <!-- container -->
 
                 </div> <!-- content -->

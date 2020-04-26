@@ -35,10 +35,10 @@ insertIntoCart($conn, $customer['id'], $date);
 // $orderid = getOrderId($conn, $customer['id']);
 $Cartid = getCartId($conn, $customer['id']);
 
-foreach ($_SESSION['cart'] as $isbn => $qty) {
-	$bookprice = getbookprice($isbn);
+foreach ($_SESSION['cart'] as $id => $qty) {
+	$bookprice = getbookprice($id);
 	$query = "INSERT INTO cartItems(cartid,productid,quantity) VALUES 
-		('$Cartid', '$isbn', '$qty')";
+		('$Cartid', 'id', '$qty')";
 	$result = mysqli_query($conn, $query);
 	if (!$result) {
 		echo "Insert value false!" . mysqli_error($conn);
