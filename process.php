@@ -41,7 +41,7 @@ foreach ($_SESSION['cart'] as $isbn => $qty) {
 		('$Cartid', '$isbn', '$qty')";
 	$result = mysqli_query($conn, $query);
 	if (!$result) {
-		echo "Insert value false!" . mysqli_error($conn2);
+		echo "Insert value false!" . mysqli_error($conn);
 		exit;
 	}
 }
