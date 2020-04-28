@@ -70,7 +70,6 @@ if (strlen($_SESSION['manager']) == 0) {
                             </div>
                         </div>
                         <!-- end row -->
-
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box">
@@ -84,7 +83,6 @@ if (strlen($_SESSION['manager']) == 0) {
                                                     <strong>Well done!</strong> <?php echo htmlentities($msg); ?>
                                                 </div>
                                             <?php } ?>
-
                                             <!---Error Message--->
                                             <?php if ($error) { ?>
                                                 <div class="alert alert-danger" role="alert">
@@ -116,7 +114,6 @@ if (strlen($_SESSION['manager']) == 0) {
                                                         </button>
                                                     </div>
                                                 </div>
-
                                                 </form>
                                             </div>
                                         </div>
@@ -135,7 +132,6 @@ if (strlen($_SESSION['manager']) == 0) {
         <script>
             var resizefunc = [];
         </script>
-
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
@@ -146,11 +142,9 @@ if (strlen($_SESSION['manager']) == 0) {
         <script src="assets/js/jquery.slimscroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
         <script src="../plugins/switchery/switchery.min.js"></script>
-
         <!-- App js -->
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
-
     </body>
 
     </html>

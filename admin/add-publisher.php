@@ -6,7 +6,6 @@ error_reporting(0);
 if (strlen($_SESSION['manager']) == 0) {
     header('location:index.php');
 } else {
-
     if (isset($_POST['submit'])) {
         $publisher = $_POST['publisher'];
         $status = 1;
@@ -18,12 +17,10 @@ if (strlen($_SESSION['manager']) == 0) {
         }
     }
 ?>
-
     <!DOCTYPE html>
     <html lang="en">
 
     <head>
-
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
@@ -72,7 +69,6 @@ if (strlen($_SESSION['manager']) == 0) {
                             </div>
                         </div>
                         <!-- end row -->
-
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box">
@@ -87,7 +83,6 @@ if (strlen($_SESSION['manager']) == 0) {
                                                     <strong>Well done!</strong> <?php echo htmlentities($msg); ?>
                                                 </div>
                                             <?php } ?>
-
                                             <!---Error Message--->
                                             <?php if ($error) { ?>
                                                 <div class="alert alert-danger" role="alert">
@@ -95,7 +90,6 @@ if (strlen($_SESSION['manager']) == 0) {
                                             <?php } ?>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col-md-6">
                                             <form class="form-horizontal" name="publisher" method="post">
@@ -105,17 +99,14 @@ if (strlen($_SESSION['manager']) == 0) {
                                                         <input type="text" class="form-control" value="" name="publisher" required>
                                                     </div>
                                                 </div>
-
                                                 <div class="form-group">
                                                     <label class="col-md-2 control-label">&nbsp;</label>
                                                     <div class="col-md-10">
-
                                                         <button type="submit" class="btn btn-custom waves-effect waves-light btn-md" name="submit">
                                                             Submit
                                                         </button>
                                                     </div>
                                                 </div>
-
                                             </form>
                                         </div>
                                     </div>
@@ -125,18 +116,15 @@ if (strlen($_SESSION['manager']) == 0) {
                         </div>
                         <!-- end row -->
                     </div> <!-- container -->
-
                 </div> <!-- content -->
 
                 <?php include('includes/footer.php'); ?>
-
             </div>
         </div>
 
         <script>
             var resizefunc = [];
         </script>
-
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>

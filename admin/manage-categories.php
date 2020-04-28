@@ -17,7 +17,6 @@ if (strlen($_SESSION['manager']) == 0) {
         $query = mysqli_query($conn, "update category set Is_Active='1' where categoryid='$id'");
         $msg = "Category restored successfully";
     }
-
     // Code for Forever deletionparmdel
     if ($_GET['action'] == 'parmdel' && $_GET['rid']) {
         $id = $_GET['rid'];
@@ -39,9 +38,7 @@ if (strlen($_SESSION['manager']) == 0) {
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
         <script src="assets/js/modernizr.min.js"></script>
-
     </head>
-
 
     <body class="fixed-left">
 
@@ -171,15 +168,12 @@ if (strlen($_SESSION['manager']) == 0) {
                                                         $cnt++;
                                                     } ?>
                                                 </tbody>
-
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div> <!-- container -->
-
                     </div> <!-- content -->
                     <?php include('includes/footer.php'); ?>
                 </div>
@@ -189,7 +183,6 @@ if (strlen($_SESSION['manager']) == 0) {
             <script>
                 var resizefunc = [];
             </script>
-
             <!-- jQuery  -->
             <script src="assets/js/jquery.min.js"></script>
             <script src="assets/js/bootstrap.min.js"></script>
@@ -200,7 +193,6 @@ if (strlen($_SESSION['manager']) == 0) {
             <script src="assets/js/jquery.slimscroll.js"></script>
             <script src="assets/js/jquery.scrollTo.min.js"></script>
             <script src="../plugins/switchery/switchery.min.js"></script>
-
             <!-- App js -->
             <script src="assets/js/jquery.core.js"></script>
             <script src="assets/js/jquery.app.js"></script>

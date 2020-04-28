@@ -205,14 +205,10 @@ if (strlen($_SESSION['manager']) == 0) {
         <!-- App js -->
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
-
-
         <script src="../plugins/switchery/switchery.min.js"></script>
 
         <!--Summernote js-->
         <script src="../plugins/summernote/summernote.min.js"></script>
-
-
 
     </body>
 

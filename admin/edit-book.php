@@ -207,22 +207,16 @@ if (strlen($_SESSION['manager']) == 0) {
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             <?php } ?>
-
                                             <button type="submit" name="update" class="btn btn-success waves-effect waves-light">Update </button>
-
                                         </div>
                                     </div> <!-- end p-20 -->
                                 </div> <!-- end col -->
                             </div>
                             <!-- end row -->
                     </div> <!-- container -->
-
                 </div> <!-- content -->
-
                 <?php include('includes/footer.php'); ?>
-
             </div>
             <!-- ============================================================== -->
             <!-- End Right content here -->
@@ -232,7 +226,6 @@ if (strlen($_SESSION['manager']) == 0) {
         <script>
             var resizefunc = [];
         </script>
-
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>

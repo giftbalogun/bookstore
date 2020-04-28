@@ -116,7 +116,6 @@ if (strlen($_SESSION['manager']) == 0) {
                                                         </button>
                                                     </div>
                                                 </div>
-
                                                 </form>
                                             </div>
                                         </div>
@@ -135,7 +134,6 @@ if (strlen($_SESSION['manager']) == 0) {
         <script>
             var resizefunc = [];
         </script>
-
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
@@ -146,11 +144,9 @@ if (strlen($_SESSION['manager']) == 0) {
         <script src="assets/js/jquery.slimscroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
         <script src="../plugins/switchery/switchery.min.js"></script>
-
         <!-- App js -->
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
-
     </body>
 
     </html>

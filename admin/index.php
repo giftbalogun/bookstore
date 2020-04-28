@@ -15,7 +15,6 @@ if (strlen($_SESSION['manager']) == 0) {
         unset($_SESSION['user']);
         echo "<script type='text/javascript'> document.location = '../admin/dashboard.php'; </script>";
     }
-
     //if username or email not found in database
     else {
         echo "<script>alert('User not registered with us');</script>";
@@ -40,11 +39,8 @@ if (strlen($_SESSION['manager']) == 0) {
     <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
-
     <script src="assets/js/modernizr.min.js"></script>
-
 </head>
-
 
 <body class="bg-transparent">
 
@@ -63,7 +59,6 @@ if (strlen($_SESSION['manager']) == 0) {
                                         <span><img src="assets/images/logo.png" alt="" height="56"></span>
                                     </a>
                                 </h2>
-                                <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
                             </div>
                             <div class="account-content">
                                 <form class="form-horizontal" method="post">
@@ -73,15 +68,11 @@ if (strlen($_SESSION['manager']) == 0) {
                                             <input class="form-control" type="text" required="" name="username" placeholder="Username or email" autocomplete="off">
                                         </div>
                                     </div>
-
                                     <div class="form-group">
                                         <div class="col-xs-12">
                                             <input class="form-control" type="password" name="password" required="" placeholder="Password" autocomplete="off">
                                         </div>
                                     </div>
-
-
-
                                     <div class="form-group account-btn text-center m-t-10">
                                         <div class="col-xs-12">
                                             <button class="btn w-md btn-bordered btn-danger waves-effect waves-light" type="submit" name="login">Log In</button>
@@ -95,13 +86,8 @@ if (strlen($_SESSION['manager']) == 0) {
                             </div>
                         </div>
                         <!-- end card-box-->
-
-
-
-
                     </div>
                     <!-- end wrapper -->
-
                 </div>
             </div>
         </div>

@@ -38,15 +38,6 @@ if (strlen($_SESSION['manager']) == 0) {
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <a href="index.php" class="logo"><span>Brute<span>Admin</span></span><i class="mdi mdi-layers"></i></a>
-                    <!-- Image logo -->
-                    <!--<a href="index.html" class="logo">-->
-                    <!--<span>-->
-                    <!--<img src="assets/images/logo.png" alt="" height="30">-->
-                    <!--</span>-->
-                    <!--<i>-->
-                    <!--<img src="assets/images/logo_sm.png" alt="" height="28">-->
-                    <!--</i>-->
-                    <!--</a>-->
                 </div>
 
                 <!-- Button mobile view to collapse sidebar menu -->
@@ -116,7 +107,7 @@ if (strlen($_SESSION['manager']) == 0) {
                                     </div>
                                 </div>
                             </a><!-- end col -->
-                            <a href="manage-posts.php">
+                            <a href="manage-book.php">
                                 <div class="col-lg-4 col-md-4 col-sm-6">
                                     <div class="card-box widget-box-one">
                                         <i class="mdi mdi-layers widget-one-icon"></i>

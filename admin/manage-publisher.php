@@ -17,14 +17,12 @@ if (strlen($_SESSION['manager']) == 0) {
         $query = mysqli_query($conn, "update publisher set Is_Active='1' where publisherid='$id'");
         $msg = "publisher restored successfully";
     }
-
     // Code for Forever deletionparmdel
     if ($_GET['action'] == 'parmdel' && $_GET['rid']) {
         $id = $_GET['rid'];
         $query = mysqli_query($conn, "delete from  publisher  where publisherid='$id'");
         $delmsg = "publisher deleted forever";
     }
-
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -39,9 +37,7 @@ if (strlen($_SESSION['manager']) == 0) {
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
         <script src="assets/js/modernizr.min.js"></script>
-
     </head>
-
 
     <body class="fixed-left">
 
