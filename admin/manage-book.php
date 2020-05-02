@@ -119,8 +119,8 @@ if (strlen($_SESSION['manager']) == 0) {
                                                             <td><?php echo getPubName($conn, $row['publisherid']); ?></td>
                                                             <td><?php echo getCatName($conn, $row['categoryid']); ?></td>
 
-                                                            <td><a href="edit-post.php?pid=<?php echo htmlentities($row['id']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
-                                                                &nbsp;<a href="manage-posts.php?pid=<?php echo htmlentities($row['id']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
+                                                            <td><a href="edit-book.php?pid=<?php echo htmlentities($row['id']); ?>"><i class="fa fa-pencil" style="color: #29b6f6;"></i></a>
+                                                                &nbsp;<a href="manage-book.php?pid=<?php echo htmlentities($row['id']); ?>&&action=del" onclick="return confirm('Do you reaaly want to delete ?')"> <i class="fa fa-trash-o" style="color: #f05050"></i></a> </td>
                                                         </tr>
                                                 <?php }
                                                 } ?>

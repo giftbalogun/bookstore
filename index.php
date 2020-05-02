@@ -18,20 +18,20 @@ $catb = select4catBook($conn);
 				<div class="banner banner-1">
 					<img src="./img/banner01.jpg" alt="">
 					<div class="banner-caption text-center">
-						<h1>Bags sale</h1>
+						<h1>Quality Books</h1>
 						<h3 class="white-color font-weak">Up to 50% Discount</h3>
-						<button class="primary-btn">Shop Now</button>
+						<a href="./book.php" class="primary-btn">Shop Now</a>
 					</div>
 				</div>
 				<!-- /banner -->
 
 				<!-- banner -->
 				<div class="banner banner-1">
-					<img src="./img/banner02.jpg" alt="">
+					<img src="./img/banner02.png" alt="">
 					<div class="banner-caption">
 						<h1 class="primary-color">HOT DEAL<br><span class="white-color font-weak">Up to 50% OFF</span>
 						</h1>
-						<button class="primary-btn">Shop Now</button>
+						<a href="./book.php" class="primary-btn">Shop Now</a>
 					</div>
 				</div>
 				<!-- /banner -->
@@ -40,8 +40,8 @@ $catb = select4catBook($conn);
 				<div class="banner banner-1">
 					<img src="./img/banner03.jpg" alt="">
 					<div class="banner-caption">
-						<h1 class="white-color">New Product <span>Collection</span></h1>
-						<button class="primary-btn">Shop Now</button>
+						<h1>Find a Classic <span>Collection</span></h1>
+						<a href="./book.php" class="primary-btn">Shop Now</a>
 					</div>
 				</div>
 				<!-- /banner -->
@@ -63,9 +63,9 @@ $catb = select4catBook($conn);
 			<!-- banner -->
 			<div class="col-md-4 col-sm-6">
 				<a class="banner banner-1" href="#">
-					<img src="./img/banner10.jpg" alt="">
+					<img src="./img/banner01.jpg" alt="">
 					<div class="banner-caption text-center">
-						<h2 class="white-color">NEW COLLECTION</h2>
+						<h2>NEW COLLECTION</h2>
 					</div>
 				</a>
 			</div>
@@ -74,9 +74,9 @@ $catb = select4catBook($conn);
 			<!-- banner -->
 			<div class="col-md-4 col-sm-6">
 				<a class="banner banner-1" href="#">
-					<img src="./img/banner11.jpg" alt="">
+					<img src="./img/banner02.png" alt="">
 					<div class="banner-caption text-center">
-						<h2 class="white-color">NEW COLLECTION</h2>
+						<h2>NEW COLLECTION</h2>
 					</div>
 				</a>
 			</div>
@@ -85,9 +85,9 @@ $catb = select4catBook($conn);
 			<!-- banner -->
 			<div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3">
 				<a class="banner banner-1" href="#">
-					<img src="./img/banner12.jpg" alt="">
+					<img src="./img/banner03.jpg" alt="">
 					<div class="banner-caption text-center">
-						<h2 class="white-color">NEW COLLECTION</h2>
+						<h2>NEW COLLECTION</h2>
 					</div>
 				</a>
 			</div>

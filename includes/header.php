@@ -142,8 +142,8 @@ $conn = db_connect();
                         while ($row = mysqli_fetch_array($query)) {
                         ?>
                             <li class="dropdown side-dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><?php echo htmlentities($row['category_name']); ?>
-                                    <i class="fa fa-angle-right"></i></a>
+                                <a href="./category.php" class="dropdown-toggle" aria-expanded="true"><?php echo htmlentities($row['category_name']); ?>
+                                </a>
                             </li>
                         <?php } ?>
                     </ul>
@@ -156,15 +156,6 @@ $conn = db_connect();
                     <ul class="menu-list">
                         <li><a href="index.php">Home</a></li>
                         <li><a href="book.php">Books</a></li>
-
-                        <li class="dropdown default-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Pages <i class="fa fa-caret-down"></i></a>
-                            <ul class="custom-menu">
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="products.html">Products</a></li>
-                                <li><a href="product-page.html">Product Details</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
                 <!-- menu nav -->

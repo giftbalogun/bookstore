@@ -4,13 +4,12 @@ require_once "./includes/database.php";
 $count = 0;
 $conn = db_connect();
 ?>
-
 <!-- BREADCRUMB -->
 <div id="breadcrumb">
 	<div class="container">
 		<ul class="breadcrumb">
 			<li><a href="#">Home</a></li>
-			<li class="active">Products</li>
+			<li class="active">Boosk By Category</li>
 		</ul>
 	</div>
 </div>
@@ -22,7 +21,6 @@ $conn = db_connect();
 	<div class="container">
 		<!-- row -->
 		<div class="row">
-
 
 			<!-- MAIN -->
 			<div id="main" class="col-9">
@@ -36,14 +34,14 @@ $conn = db_connect();
 						} else {
 							$pageno = 1;
 						}
-						$no_of_records_per_page = 12;
+						$no_of_records_per_page = 6;
 						$offset = ($pageno - 1) * $no_of_records_per_page;
 						$total_pages_sql = "SELECT COUNT(*) FROM books";
 						$result = mysqli_query($conn, $total_pages_sql);
 						$total_rows = mysqli_fetch_array($result)[0];
 						$total_pages = ceil($total_rows / $no_of_records_per_page);
 
-						$sql = "select * from books where Is_Active=1 order by id desc  LIMIT $offset, $no_of_records_per_page";
+						$sql = "select * from books where Is_Active=1 order by categoryid desc  LIMIT $offset, $no_of_records_per_page";
 						$query = mysqli_query($conn, $sql);
 						while ($row = mysqli_fetch_array($query)) {
 						?>
@@ -71,9 +69,8 @@ $conn = db_connect();
 								</div>
 							</div>
 							<!-- /Product Single -->
+							<div class="clearfix visible-sm visible-xs"></div>
 						<?php } ?>
-						<div class="clearfix visible-sm visible-xs"></div>
-
 					</div>
 					<!-- /row -->
 				</div>
